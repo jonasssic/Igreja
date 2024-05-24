@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localizações da Igreja Gratidão</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-image: url('background-cidade-verde.jpg'); /* Imagem de fundo inicial */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos do formulário */
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para legibilidade */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 18px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h2>Selecione a Localização da Igreja Gratidão</h2>
+    <div class="form-group">
+      <label for="localizacao">Localização:</label>
+      <select id="localizacao">
+        <option value="cidade-verde">Cidade Verde</option>
+        <option value="santa-rita">Santa Rita</option>
+        <option value="bayeux">Bayeux</option>
+      </select>
+    </div>
+    <input type="submit" value="Enviar" class="button">
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Seleciona o elemento select
+      var selectLocalizacao = document.getElementById('localizacao');
+
+      // Adiciona um ouvinte de evento para o evento 'change'
+      selectLocalizacao.addEventListener('change', function() {
+        // Obtém o valor selecionado no select
+        var novaLocalizacao = selectLocalizacao.value;
+
+        // Altera a imagem de fundo com base na localização selecionada
+        if (novaLocalizacao === 'cidade-verde') {
+          document.body.style.backgroundImage = "url('igreja.jpg')";
+        } else if (novaLocalizacao === 'santa-rita') {
+          document.body.style.backgroundImage = "url('Dias.jpg')";
+        } else if (novaLocalizacao === 'bayeux') {
+          document.body.style.backgroundImage = "url('background-bayeux.jpg')";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

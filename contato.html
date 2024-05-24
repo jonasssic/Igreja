@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Igreja Evangélica</title>
+  <style>
+    /* Reset de estilos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      /* Adicionando uma imagem de fundo */
+      background: url('igreja.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff; /* Mudando a cor do texto para branco para melhor contraste */
+    }
+
+    header {
+      background-color: rgba(39, 24, 24, 0.8); /* Usando RGBA para adicionar transparência */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para seções */
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: rgba(39, 24, 24, 0.8); /* Usando RGBA para adicionar transparência */
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    /* Estilos para o formulário de contato */
+    .footer-form {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      margin-bottom: 5px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Como nos Encontrar</h1>
+    <nav>
+      <ul>
+        <!--  Google Maps -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.5755236488394!2d-34.934926011145!3d-7.174965699999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace96a442476b1%3A0xd2173c288357a2a1!2sGaragem%20dos%20salgados!5e0!3m2!1spt-BR!2sbr!4v1715821435124!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção de formulário de contato -->
+  <section class="footer-form">
+    <form id="contact-form">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="phone">Telefone:</label>
+      <input type="tel" id="phone" name="phone">
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Igreja Evangélica. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    //Quando você tenta enviar o formulário, esse código:
+-// Encontra o formulário.
+- //Adiciona uma ação que será executada quando o formulário for enviado.
+- //Evita que o formulário seja enviado imediatamente e que a página seja recarregada, 
+//permitindo que o JavaScript processe os dados primeiro.
+
+// Para Que Serve:
+//Isso é útil para validar os dados do formulário ou processá-los de alguma forma antes de enviá-los ao servidor.
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Validação básica 
+      //document.getElementById("name")`: Pega o campo de entrada com o ID "name".
+    //`.value`: Pega o texto que o usuário digitou.
+    //`.trim()`: Remove espaços extras no começo e no fim do texto
+      var name = document.getElementById("name").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var message = document.getElementById("message").value.trim();
+        //Se o nome ou a mensagem estiverem vazios, o código mostra um alerta e para o envio do formulário.
+      if (name === "" || message === "") {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+      }
+
+      // Envie o formulário
+      // Aqui você pode fazer uma requisição AJAX para enviar os dados do formulário para o servidor
+      // Por exemplo: fetch('URL_DO_SEU_ENDPOINT', { method: 'POST', body: new FormData(this) })
+
+      // Limpar o formulário após o envio bem-sucedido
+      document.getElementById("contact-form").reset();
+      alert("Obrigado! Sua mensagem foi enviada com sucesso.");
+    });
+  </script>
+</body>
+</html>

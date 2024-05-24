@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultos da Igreja Gratidão</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-image: url('igreja.jpg'); /* Substitua 'background.jpg' pelo caminho da sua imagem de fundo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #000000; /* Cor do texto */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos do cabeçalho */
+    header {
+      background-color: rgba(39, 24, 24, 0.8);
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Estilos da lista de cultos */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px 0;
+    }
+
+    /* Estilos do rodapé */
+    footer {
+      background-color: rgba(39, 24, 24, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Estilo do botão */
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Estilo da caixa de texto */
+    .caixa-texto {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Cultos da Igreja Gratidão</h1>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <ul>
+      <!-- Botões interativos para os dias da semana -->
+      <li><button class="button" onclick="mostrarCaixaTexto('João 3:16 - Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.')">Domingo</button></li>
+      <li><button class="button" onclick="mostrarCaixaTexto('Mateus 18:20 - Porque, onde estiverem dois ou três reunidos em meu nome, aí estou eu no meio deles.')">Segunda-feira</button></li>
+      <li><button class="button" onclick="mostrarCaixaTexto('Provérbios 2:6 - Porque o Senhor dá a sabedoria; da sua boca é que vem o conhecimento e o entendimento.')">Quarta-feira</button></li>
+      <li><button class="button" onclick="mostrarCaixaTexto('Salmos 34:8 - Provai e vede que o Senhor é bom; bem-aventurado o homem que nele confia.')">Sexta-feira</button></li>
+      <li><button class="button" onclick="mostrarCaixaTexto('Salmos 122:1 - Alegrei-me quando me disseram: Vamos à Casa do Senhor.')">Sábado</button></li>
+    </ul>
+
+    <!-- Caixa de texto -->
+    <div id="caixaTexto" class="caixa-texto" onclick="fecharCaixaTexto(event)">
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 Igreja Gratidão. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script para mostrar a caixa de texto -->
+  <script>
+    function mostrarCaixaTexto(texto) {
+      var caixaTexto = document.getElementById('caixaTexto');
+      caixaTexto.textContent = texto;
+      caixaTexto.style.display = 'block';
+    }
+
+    function fecharCaixaTexto(event) {
+      var caixaTexto = document.getElementById('caixaTexto');
+      caixaTexto.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
